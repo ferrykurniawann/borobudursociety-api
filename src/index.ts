@@ -8,7 +8,11 @@ import "./utils/connectDB";
 const app = express();
 const port: number = 4000;
 
-app.use(cors());
+app.use(cors({
+  origin: ["https://borobudursociety.vercel.app"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
 
 const corsOrigin = {
   origin: "http://localhost:3000",
